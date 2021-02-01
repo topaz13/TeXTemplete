@@ -1,9 +1,15 @@
 % ソースコードに関する設定
+\usepackage{color}
+
 \lstset{
+  % デフォルトでC言語:optionで変更する
+  language={C},
+  backgroundcolor={\color[gray]{.95}},
   basicstyle={\ttfamily},
   identifierstyle={\small},
   commentstyle={\smallitshape},
-  keywordstyle={\small\bfseries},
+  % keywordstyle={\small\bfseries},
+  keywordstyle={\bfseries\color[rgb]{0,0,1}},
   ndkeywordstyle={\small},
   stringstyle={\small\ttfamily},
   frame=single,
@@ -17,3 +23,6 @@
   numbersep=1zw,
   lineskip=-0.5ex
 }
+
+% \code[lang]{caption}{label}{path}
+\newcommand{\code}[3][C++]{\lstinputlisting[language={#1},caption={#2},label={#3}]}
