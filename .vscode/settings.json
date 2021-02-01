@@ -1,0 +1,58 @@
+{
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+            "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+            "tools": [
+            "pdflatex",
+            "bibtex",
+            "pdflatex",
+            "pdflatex"
+            ]
+        }
+        ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+             "-e",
+             "$latex=q/uplatex %O -synctex=1 -interaction=nonstopmode -file-line-error %S/",
+             "-e",
+             "$bibtex=q/upbibtex %O %B/",
+             "-e",
+             "$biber=q/biber %O --bblencoding=utf8 -u -U --output_safechars %B/",
+             "-e",
+             "$makeindex=q/upmendex %O -o %D %S/",
+             "-e",
+             "$dvipdf=q/dvipdfmx %O -o %D %S/",
+             "-norc",
+             "-gg",
+             "-pdfdvi",
+             "%DOC%"
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    // ディレクトリから見えなくする
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.aux":true,
+        "**/*.dvi":true,
+        "**/*.fls":true,
+        "**/*.fdb_latexmk":true,
+        "**/*.log":true,
+        "**/*.gz":true
+
+    }
+
+}
