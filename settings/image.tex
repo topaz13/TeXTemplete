@@ -1,0 +1,11 @@
+% \img{path}{caption}
+
+\newcommand{\img}[3][]{
+    \begin{figure}[htbp]
+        \begin{center}
+            \includegraphics[clip,width=7.0cm,#1]{{#2}}
+            \caption{{#3}}
+        \end{center}
+    \end{figure}
+}
+
