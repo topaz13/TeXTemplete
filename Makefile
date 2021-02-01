@@ -1,17 +1,8 @@
-TARGET := hogetxt hugatxt
+TARGET := *.dvi *gz *log *fls *fdb_latexmk
+
+# 不要ファイルの削除
 clean:
-	@ls
-
-rmrm:
-	rm *aux
-
-mfile:
-	@echo mfile
-	for i in ${TARGET}; do\
-		rm $$i2;\
+	@for i in ${TARGET}; do\
+		rm -f $$i;\
 	done
-
-touch:
-	for i in ${TARGET}; do\
-		touch $$i;\
-	done
+	@echo "不要ファイルを削除しました"
